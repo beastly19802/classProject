@@ -1,15 +1,23 @@
-import React,{Components} from 'react'
-import { render } from 'react-dom'
-import {Text, View, TouchableOpacity} from 'react-native'
+import React,{Component} from 'react';
+import {Text, View, TouchableOpacity, TextInput} from 'react-native';
+import {ListItem} from 'react-native-elements'
+import db from '../config';
 
-/*export default class UserInterfaceScreen extends Components{
-render(){
-    return(
-        <View>
-            <Text>
-                it works
-            </Text>
-        </View>
-    )
-}
-}*/
+export default class UserInterfaceScreen extends Component{
+    constructor(){
+        super()
+        this.state={
+            emailId: ''
+        }
+    }
+renderItem = ( {item, i} ) =
+    <ListItem
+        key={i}
+        title = {item.emailId}
+        rightElement={
+            <TouchableOpacity
+                style = {[
+                    styles.button,
+                {backgroundColor : '#696969'}]}
+        }
+)}
